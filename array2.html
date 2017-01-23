@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array2</title>
+</head>
+<body>
+    Arv:<input type="number" id="arv">
+    <p id="output"></p>
+<button onclick="processNumber()">OK</button>
+<script>
+
+    function processNumber(){
+        //võtab sisendi
+        var x = document.getElementById("arv").value;
+        //annab väljundi
+        document.getElementById("output").innerHTML = func(x);
+    }
+
+
+    function func(numbers) {
+        var result = "";
+        for (i = 0; i < numbers.length; i++) {
+            result += numbers[i];
+            //viimasele ei pane - juurde
+            if(numbers[i]%2 == 0 && i != numbers.length - 1) {
+                result += "-";
+            }
+        }
+        return result;
+    }
+</script>
+
+
+</body>
+</html>

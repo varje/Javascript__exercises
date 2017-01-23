@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funktsioonid</title>
+</head>
+<body>
+<script>
+    function func() {
+        var sum = 0;
+        var i = 0;
+        for (i=0; i<arguments.length; i++) {
+            sum = sum + arguments[i];
+        }
+        return sum;
+    }
+    console.log(func(5, 10));
+
+
+</script>
+
+</body>
+</html>

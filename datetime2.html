@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datetime2</title>
+</head>
+<body>
+<p>
+Alguskuupäev:<input type="date" name="algus" id="algus">
+Lõppkuupäev:<input type="date" name="lopp" id="lopp">
+</p>
+<button onclick="processNumber()">Arvuta päevade arv</button>
+<p id="output"></p>
+<script>
+    function processNumber(){
+        //võtab sisendi
+        var esimene = document.getElementById("algus");
+        //annab arrayna
+        var date1 = esimene.value.split('-');
+        var teine = document.getElementById("lopp");
+        var date2 = teine.value.split('-');
+        //annab väljundi
+        document.getElementById("output").innerHTML = func(date1, date2);
+    }
+    //getDate annab päevade arvu
+    function func(a, b) {
+        return new Date(b[0], b[1], b[2]).getDate() - new Date(a[0], a[1], a[2]).getDate();
+    }
+</script>
+</body>
+</html>

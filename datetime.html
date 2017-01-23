@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datetime</title>
+</head>
+<body>
+<select name="month" id="month">
+    <option value="">Vali kuu</option>
+</select>
+<select name="year" id="year">
+    <option value="">Vali aasta</option>
+</select>
+<button onclick="processNumber()">Arvuta päevade arv</button>
+<p id="output"></p>
+<script>
+    var months = ['jaanuar', 'veebruar', 'märts', 'aprill', 'mai', 'juuni', 'juuli', 'august', 'september', 'oktoober', 'november', 'detsember']
+    for (i = 0; i < months.length; i++) {
+        var option = document.createElement("OPTION");
+        //text näidatakse kasutajale
+        option.text = months[i];
+        //value loeb arvuti sisse
+        option.value = (i+1);
+        document.getElementById('month').options.add(option);
+    }
+    for (a = 1900; a <= 2100; a++) {
+        var option = document.createElement("OPTION");
+        option.text = a;
+        option.value = a;
+        document.getElementById('year').options.add(option);
+    }
+
+    function processNumber(){
+        //võtab sisendi
+        var kuu = document.getElementById("month");
+        //võtab valitud optioni
+        var kuunr = kuu.options[kuu.selectedIndex].value;
+        var aasta = document.getElementById("year");
+        var aastanr = aasta.options[aasta.selectedIndex].value;
+        //annab väljundi
+        document.getElementById("output").innerHTML = func(kuunr, aastanr);
+    }
+
+    function func(kuu, aasta) {
+        return new Date(aasta, kuu, 0).getDate();
+    }
+
+</script>
+
+</body>
+</html>

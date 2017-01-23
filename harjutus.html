@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Harjutus</title>
+</head>
+<body>
+<script>
+  /*//objekti koopia ilma algset objekti muutmata
+    var bob = {
+        name: "Bob",
+        age: 32
+    };
+
+    var bill = JSON.parse(JSON.stringify(bob));
+    bill.name = "Bill";
+
+    console.log(bob);
+    console.log(bill);
+  */
+  /* //ternary operator = lühike viis if-statementi kirja panemiseks
+    var age = 19;
+    var voteable = (age < 18) ? "Too young":"Old enough";
+    console.log(voteable);*/
+
+/* //arrayde muutmine
+var list = ['Joe', 'Jim', 'Madis', 'John', 'Maris'];
+function muudaviimane () {
+    list[list.length-1] = 8;
+}
+muudaviimane();
+
+function eemaldaviimane() {
+    list.pop();
+}
+eemaldaviimane();
+
+function lisa() {
+    list.push(8);
+}
+lisa();
+console.log(list);
+
+function otsi() {
+    for (i=0; i<list.length; i++) {
+        if (list[i].charAt(0) === 'M') {
+            return list[i];
+        }
+    }
+}
+console.log(otsi());
+
+function tagasta() {
+    return list[2];
+}
+console.log(tagasta());*/
+
+var a ="12345";
+function func(numbers) {
+    if(numbers.length==0)
+        return [];
+    var result = "";
+    for(var i=0;i<numbers.length; i++) {
+        result += numbers[i];
+        if(numbers[i]%2 == 0) {
+            result += "-";
+        }
+    }
+    return result;
+}
+
+console.log(func(a));
+</script>
+
+</body>
+</html>
