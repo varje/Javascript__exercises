@@ -6,23 +6,25 @@
 </head>
 <body>
 Sisesta arv: <input type="number" id="arv">
+<button onclick="processNumber()">OK</button>
 <p id="output"></p>
-<button onclick="processNumber()" id="output">ok</button>
 <script>
     function processNumber() {
         var input = document.getElementById("arv").value;
-        document.getElementById("output").innerHTML=func(input);
+        document.getElementById("output").innerHTML = func(input);
     }
+
     function func(arv) {
         output = "";
         for (i=0; i<arv.length; i++) {
             output += arv[i];
-            if (arv[i]%2==0 && i != arv.length - 1) {
+            if (arv[i] % 2 == 0 && i != arv.length -1) {
                 output += '-';
             }
         }
         return output;
     }
 </script>
+
 </body>
 </html>
