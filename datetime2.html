@@ -13,12 +13,9 @@ Lõppkuupäev:<input type="date" name="lopp" id="lopp">
 <p id="output"></p>
 <script>
     function processNumber(){
-        //võtab sisendi
-        var esimene = document.getElementById("algus");
         //annab arrayna
-        var date1 = esimene.value.split('-');
-        var teine = document.getElementById("lopp");
-        var date2 = teine.value.split('-');
+        var date1 = document.getElementById("algus").value.split('-');
+        var date2 = document.getElementById("lopp").value.split('-');
         //annab väljundi
         document.getElementById("output").innerHTML = func(date1, date2);
     }

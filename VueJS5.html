@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS4</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="repeat-object">
+    <task-list v-bind:tasks="tasks"/>
+</div>
+
+<script>
+    Vue.component('task-list', {
+        props: ['tasks'],
+        template:'<div><task v-for="value in tasks" v-bind:object="value"/></div>'
+    })
+    Vue.component('task', {
+        props: ['object'],
+        template: '<div><div v-if="object.completed" style="text-decoration:line-through">{{object.description}}</div>' +
+        '<div v-if="!object.completed">{{object.description}} </div></div>'
+    })
+
+    new Vue({
+        el: '#repeat-object',
+        data: {
+            tasks: [
+                obj1 = {
+                    description: 'objekt1',
+                    completed: true
+                },
+                obj2 = {
+                    description: 'objekt2',
+                    completed: false
+                },
+                obj3 = {
+                    description: 'objekt3',
+                    completed: true
+                }
+            ]
+        }
+    })
+</script>
+</body>
+</html>

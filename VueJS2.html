@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS2</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <button v-bind:title="message">OK</button>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        }
+    })
+</script>
+
+</body>
+</html>

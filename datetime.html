@@ -32,11 +32,8 @@
 
     function processNumber(){
         //võtab sisendi
-        var kuu = document.getElementById("month");
-        //võtab valitud optioni
-        var kuunr = kuu.options[kuu.selectedIndex].value;
-        var aasta = document.getElementById("year");
-        var aastanr = aasta.options[aasta.selectedIndex].value;
+        var kuunr = document.getElementById("month").value;
+        var aastanr = document.getElementById("year").value;
         //annab väljundi
         document.getElementById("output").innerHTML = func(kuunr, aastanr);
     }

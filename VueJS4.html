@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS4</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <ol id="repeat-object">
+        <li v-for="value in tasks">
+            <div v-if="value.completed" style="text-decoration:line-through">{{value.description}}</div>
+            <div v-if="!value.completed">{{value.description}}</div>
+        </li>
+    </ol>
+
+<script>
+    new Vue({
+        el: '#repeat-object',
+        data: {
+            tasks: [
+                obj1 = {
+                    description: 'objekt1',
+                    completed: true
+                },
+                obj2 = {
+                    description: 'objekt2',
+                    completed: false
+                },
+                obj3 = {
+                    description: 'objekt3',
+                    completed: true
+                }
+            ]
+        }
+    })
+</script>
+</body>
+</html>
